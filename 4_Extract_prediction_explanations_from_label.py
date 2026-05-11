@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
     # Model arguments
     parser.add_argument('--generative_explainer', type=str, help='Name of the generative model to explain the output',
-                        default=None)
+                        default='mistralai/Mixtral-8x7B-Instruct-v0.1')
 
     # Save arguments
     parser.add_argument('--output', type=str, help='Path to the output file', default=None)
