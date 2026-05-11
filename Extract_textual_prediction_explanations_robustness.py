@@ -8,7 +8,7 @@ import pandas as pd
 from explainability_utils.explainability_utils import get_prediction_explanations, get_explainable_prediction
 
 from utils.model_loader import load_quantified_model, get_prediction_labels
-from website_utils.website_functions_v2 import *
+from utils.website_functions_v2 import *
 
 # In[10]:
 

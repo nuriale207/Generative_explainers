@@ -8,7 +8,7 @@ from utils.model_loader import load_quantified_model, get_prediction_labels
 # In[10]:
 
 
-from website_utils.website_functions_v2 import *
+from utils.website_functions_v2 import *
 import pandas as pd
 import warnings
 from utils import model_handler, model_loader
