@@ -2,7 +2,7 @@
 
 Code for the paper: **Generative explainers in Spanish healthcare prognosis: a novel assessment framework**
 
-Pipeline for further pretraining, fine-tuning, and explainability evaluation of clinical language models on Electronic Health Records (EHRs).
+Pipeline for further pretraining, fine-tuning, and explainability evaluation of clinical language models.
 
 ## Pipeline
 
@@ -12,7 +12,7 @@ Pipeline for further pretraining, fine-tuning, and explainability evaluation of 
 | 2 | `2_Next_code_model_train.py` | Fine-tune the pretrained model for next visit diagnoses prediction (as ICD-10 diagnoses) |
 | 3 | `3_Summarize_EHR_texts.py` | Summarize raw EHR texts using a LLM (Mixtral-8x7B) |
 | 4 | `4_Extract_prediction_explanations_from_label.py` | Generate natural language explanations for each predicted diagnosis using Mixtral or BioMistral |
-| 5 | `5_Evaluate_explainability.py` | Evaluate explanations interpretability using DoXPy (Degree of Explainability) |
+| 5 | `5_Evaluate_explainability.py` | Evaluate explanations interpretability |
 | 6 | `6_Extract_textual_prediction_explanations_robustness.py` | Assess explanations factuality and robustness |
 
 ## Installation
