@@ -123,44 +123,44 @@ if __name__ == "__main__":
     parser.add_argument('--eval_data_dir', type=str, default="eval_data",
                         help="Directory containing the evaluation dataset")
     parser.add_argument("--csv_sep", type=str, default="\t")
-    parser.add_argument("--pretrain_sequence_column", type=str, default="HardPrompts",)
+    parser.add_argument("--pretrain_sequence_column", type=str, default="PretrainSequence")
 
     # Model arguments
-    parser.add_argument('--model_id', type=str, default="allenai/longformer-base-4096",
+    parser.add_argument('--model_id', type=str, default="UFNLP/gatortron-base",
                         help="Pretrained model name")
-    parser.add_argument('--model_type', type=str, default="longformer",
+    parser.add_argument('--model_type', type=str, default="bert",
                         help="Pretrained model type")
     parser.add_argument('--model_path', type=str, default="model_id",
                         help="Directory containing the model to load")
     parser.add_argument('--model_out', type=str, default="output",
                         help="Directory containing the model to load")
     parser.add_argument('--tokenizer_path', type=str, default=None,
-                        help="Directory containing the model to load")
+                        help="Directory containing the tokenizer to load")
 
     # Experiments save path arguments
     parser.add_argument('--output_dir', type=str, default="output",
                         help="Directory to save the predictions")
-    parser.add_argument("--experiment_name", type=str, default="longformer",
+    parser.add_argument("--experiment_name", type=str, default="gatortron_further_pretrain",
                         help="Name of the experiment")
 
     # Training arguments
     parser.add_argument('--max_len', type=int, default=512,
                         help="Maximum length of the sequence")
-    parser.add_argument('--batch_size', type=int, default=4,
+    parser.add_argument('--batch_size', type=int, default=8,
                         help="Batch size for training")
-    parser.add_argument('--epochs', type=int, default=50,
+    parser.add_argument('--epochs', type=int, default=20,
                         help="Number of training epochs")
-    parser.add_argument('--lr', type=float, default=5e-5,
+    parser.add_argument('--lr', type=float, default=2e-5,
                         help="Learning rate")
     parser.add_argument('--warmup_proportion', type=float, default=0.1,
                         help="Proportion of training to perform linear learning rate warmup for")
-    parser.add_argument('--warmup_steps', type=int, default=125,
+    parser.add_argument('--warmup_steps', type=int, default=500,
                         help="Set the number of warmup steps")
-    parser.add_argument('--grad_accum', type=int, default=1,
+    parser.add_argument('--grad_accum', type=int, default=4,
                         help="Set the number of gradient accumulation steps")
     parser.add_argument('--adam_epsilon', type=float, default=1e-8,
                         help="Epsilon for Adam optimizer")
-    parser.add_argument('--weight_decay', type=float, default=0.07,
+    parser.add_argument('--weight_decay', type=float, default=0.01,
                         help="Weight decay if we apply some")
     parser.add_argument('--max_grad_norm', type=float, default=1.0,
                         help="Max gradient norm")
@@ -172,8 +172,8 @@ if __name__ == "__main__":
     parser.add_argument('--next_word_training', action='store_true',
                         help='If indicated the model will be pretrained on '
                              'the next word prediction task')
-    parser.add_argument('--mlm_prob', type=float, default=0.25,
-                        help='The percentage of masked tokens. Default is 25% (0.25). If data already contains [MASK] '
+    parser.add_argument('--mlm_prob', type=float, default=0.15,
+                        help='The percentage of masked tokens. Standard BERT MLM is 0.15. If data already contains [MASK] '
                              'tokens, set this to 0')
 
     args = parser.parse_args()
